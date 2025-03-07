@@ -50,7 +50,26 @@
                             <!-- Left Side: Taxi App Details and Form -->
                             <div class="p-4">
                                 <h2 class="text-2xl font-bold mb-4">Yuraban rides, transport on demand anytime, anywhere</h2>
-
+                                <form method="POST" class="space-y-4">
+                                    @csrf
+                                    <div class="flex items-center">
+                                        <label for="pickup" class="block text-sm font-medium text-gray-700 mr-2">Pickup Location</label>
+                                        <input type="text" id="pickup" name="pickup" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring focus:ring-opacity-50" />
+                                        <button type="button" id="current-location-button" class="ml-2 bg-blue-500 text-white py-1 px-3 rounded-md hover:bg-blue-600" onclick="getCurrentLocation()">Current Location</button>
+                                    </div>
+                                    <div>
+                                        <label for="dropoff" class="block text-sm font-medium text-gray-700">Dropoff Location</label>
+                                        <input type="text" id="dropoff" name="dropoff" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring focus:ring-opacity-50" />
+                                    </div>
+                                    <div class="flex items-center">
+                                        <label for="time" class="block text-sm font-medium text-gray-700 mr-2">Pickup Time</label>
+                                        <input type="datetime-local" id="time" name="time" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring focus:ring-opacity-50" />
+                                        <button type="button" id="now-button" class="ml-2 bg-blue-500 text-white py-1 px-3 rounded-md hover:bg-blue-600" onclick="setCurrentTime()">Now</button>
+                                    </div>
+                                    <div>
+                                        <button type="submit" class="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600">Book Ride</button>
+                                    </div>
+                                </form>
                             </div>
 
                             <!-- Right Side: Map -->
